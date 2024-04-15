@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Script using API and modume requests"""
+
 
 import requests
 import sys
