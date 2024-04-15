@@ -33,7 +33,7 @@ todos?userId={USER_ID}"
                            task['completed'], "username": USERNAME})
 
     # Create JSON structure
-    json_output = {str(USER_ID): tasks_info}
+    json_output = {USER_ID: tasks_info}
 
     # Write data to JSON file
     with open(f"{USER_ID}.json", 'w') as json_file:
