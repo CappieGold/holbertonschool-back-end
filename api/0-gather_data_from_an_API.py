@@ -5,6 +5,7 @@ import sys
 
 
 def fetch_todo_progress(employee_id):
+    employee_id = int(sys.argv[1])
     # Endpoint URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
