@@ -30,7 +30,7 @@ todos?userId={user_id}"
 
         # Stocker les tâches dans le format requis
         all_tasks[user_id] = [
-            {"username": username, "task": todo['title'], 
+            {"username": username, "task": todo['title'],
              "completed": todo['completed']}
             for todo in todos
         ]
