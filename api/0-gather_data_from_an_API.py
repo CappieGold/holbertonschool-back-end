@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 def fetch_todo_progress(employee_id):
     # Endpoint URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
@@ -21,12 +22,13 @@ def fetch_todo_progress(employee_id):
     # Calculate progress
     TOTAL_NUMBER_OF_TASKS = len(todos_data)
     NUMBER_OF_DONE_TASKS = sum(1 for TASK_TITLE in todos_data if TASK_TITLE['completed'])
-    
+
     # Print progress
     print(f"Employee {EMPLOYEE_NAME} is done with tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
     for TASK_TITLE in todos_data:
         if TASK_TITLE['completed']:
             print(f"\t {TASK_TITLE['title']}")
+
 
 if __name__ == "__main__":
     employee_id = int(sys.argv[1])
