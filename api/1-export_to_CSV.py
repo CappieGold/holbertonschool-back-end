@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Script using API and module requests"""
 
-import requests
 import csv
+import requests
 import sys
 
 
@@ -31,10 +31,13 @@ def export_tasks_to_csv(USER_ID):
     with open(csv_file_name, mode='w', newline='') as file:
         csv_writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 
-        # Write each task to the CSV
+        # Write each TASK_COMPLETED_STATUS to the CSV
         for task in todos_data:
-            csv_writer.writerow([USER_ID, USERNAME, task['completed'],
-                                 task['title']])
+            TASK_COMPLETED_STATUS = task
+            TASK_TITLE = task
+            csv_writer.writerow([USER_ID, USERNAME,
+                                 TASK_COMPLETED_STATUS['completed'],
+                                 TASK_TITLE['title']])
 
 
 if __name__ == "__main__":
