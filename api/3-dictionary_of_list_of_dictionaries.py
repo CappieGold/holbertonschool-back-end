@@ -5,6 +5,7 @@
 import json
 import requests
 
+
 def fetch_and_export_all_tasks():
     """json all user all tasks"""
 
@@ -22,13 +23,15 @@ def fetch_and_export_all_tasks():
         username = user['username']
 
         # URL pour les tâches de l'utilisateur actuel
-        todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
+        todos_url = f"https://jsonplaceholder.typicode.com/\
+todos?userId={user_id}"
         todos_response = requests.get(todos_url)
         todos = todos_response.json()
 
         # Stocker les tâches dans le format requis
         all_tasks[user_id] = [
-            {"username": username, "task": todo['title'], "completed": todo['completed']}
+            {"username": username, "task": todo['title'], 
+             "completed": todo['completed']}
             for todo in todos
         ]
 
