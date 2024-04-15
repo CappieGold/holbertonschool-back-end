@@ -10,9 +10,6 @@ def fetch_todo_progress(employee_id):
 
     # Fetch user information
     user_response = requests.get(user_url)
-    if user_response.status_code != 200:
-        print(f"Failed to retrieve data for employee ID {employee_id}")
-        return
 
     user_data = user_response.json()
     employee_name = user_data['name']
@@ -32,8 +29,5 @@ def fetch_todo_progress(employee_id):
             print(f"\t {task['title']}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 script_name.py <employee_id>")
-    else:
-        employee_id = int(sys.argv[1])
-        fetch_todo_progress(employee_id)
+    employee_id = int(sys.argv[1])
+    fetch_todo_progress(employee_id)
